@@ -53,6 +53,14 @@ def sitemap():
     return xml_content, 200, {'Content-Type': 'application/xml'}
 
 
+@app.route("/robots.txt", methods=['GET'])
+def robots_txt():
+    with open('robots.txt', 'r') as txt:
+        txt_content = txt.read()
+    return txt_content, 200, {'Content-Type': 'text/plain'}
+
+
+
 
 
 @app.route("/administrator",methods=['POST','GET'])
