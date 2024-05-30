@@ -8,6 +8,7 @@ sitemap_path = os.path.abspath('sitemap.xml')
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+app.config["SECRET_KEY"] = "12345"
 db = SQLAlchemy(app)
 
 class Details(db.Model):
@@ -80,4 +81,5 @@ def Admin():
      
 
 if __name__ == '__main__':
-   app.run(debug=False ,port=8000)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8000)
