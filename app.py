@@ -1,5 +1,9 @@
 # save this as app.py
 from flask import Flask,render_template,request
+import os
+
+# Get the absolute path to the sitemap.xml file
+sitemap_path = os.path.abspath('sitemap.xml')
 
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
@@ -42,6 +46,11 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route("/sitemap.xml", methods=['GET'])
+def sitemap():
+    with open('sitemap.xml', 'r') as xml_file:
+        xml_content = xml_file.read()
+    return xml_content, 200, {'Content-Type': 'application/xml'}
 
 
 
