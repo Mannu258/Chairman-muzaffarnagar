@@ -4,9 +4,16 @@ import os
 
 # Get the absolute path to the sitemap.xml file
 sitemap_path = os.path.abspath('sitemap.xml')
+from flask import Flask, request, send_from_directory
+app = Flask(__name__, static_folder='static')    
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 
 from flask_sqlalchemy import SQLAlchemy
-app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 app.config["SECRET_KEY"] = "12345"
 db = SQLAlchemy(app)
@@ -81,5 +88,4 @@ def Admin():
      
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8000)
+   app.run(debug=False ,port=8000)
