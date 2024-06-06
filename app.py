@@ -54,6 +54,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route("/blog", methods=['POST','GET'])
+def blog():
+    return render_template('blog.html')
+
 @app.route("/sitemap.xml", methods=['GET'])
 def sitemap():
     with open('sitemap.xml', 'r') as xml_file:
@@ -66,6 +70,8 @@ def robots_txt():
     with open('robots.txt', 'r') as txt:
         txt_content = txt.read()
     return txt_content, 200, {'Content-Type': 'text/plain'}
+
+
 
 
 
