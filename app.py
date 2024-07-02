@@ -54,6 +54,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route("/muzaffarnagr-chairman", methods=['POST','GET'])
+def info():
+    return render_template('info.html')
+
 @app.route("/blog", methods=['POST','GET'])
 def blog():
     return render_template('blog.html')
