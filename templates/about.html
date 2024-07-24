@@ -288,22 +288,43 @@
   <!-- end info section -->
 
   <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 col-md-9 mx-auto">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27787.299929200988!2d77.6882582294159!3d29.475161474891074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c1ba00983523d%3A0xc6a75ba008574871!2sMuzaffarnagar%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1717335954056!5m2!1sen!2sin" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p>
-            &copy; 2024 Developed by
-            <a target="_blank" href="https://mandeep.pythonanywhere.com/"><b>Developer</b><br>
-            &copy; Powered by
-            <a href="https://linktr.ee/shubhkaj"><b> shubhkaj </b>
+  <footer class="bg-dark text-white">
+        <style>
+            .copy {
+                padding: 20px;
+                background-color: #2E2E2E;
+                color: #FFF;
+            }
 
-          </p>
+            .copy a {
+                color: #FFF;
+            }
+
+            .copy span {
+                float: right;
+            }
+
+            .copy span i {
+                margin-right: 20px;
+            }
+        </style>
+        <div class="copy">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
+            <div class="container">
+                <a href="https://www.mandeep-developer.site/">2024 &copy; All Rights Reserved | Designed and Developed
+                    by
+                    Developer</a>
+
+                <span>
+                    <a href="https://www.mandeep-developer.site/" target="_blank"><i class="far fa-user-circle"></i></a>
+                    <a href="https://github.com/Mannu258" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/Mannu_258" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/mandeep-mishra-843378223/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </span>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
   <!-- footer section -->
 
   <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
